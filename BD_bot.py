@@ -251,7 +251,7 @@ async def get_repl_logs(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.info(f"Выполнение команды: /get_repl_logs")
 
         log_data = subprocess.run(
-            ["bash", "-c", f"cat /var/log/postgresql/postgresql.csv | grep repl | tail -n 15"],
+            ["bash", "-c", f"cat /var/log/postgresql/postgresql.log | grep repl | tail -n 15"],
             capture_output=True,
             text=True
         ).stdout
